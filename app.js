@@ -4,6 +4,17 @@ function sortear(){
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
 
+    //para evitar que o número "até" seja menor que o "de"
+    if (de >= ate){
+        alert ("número não permitido, o número do campo até deve ser menor que o número inicial do intervalo");
+        return;
+    }
+
+    //para evitar que a "quantidade" seja menor que o total de números disponíveis
+    if (quantidade > (ate - de + 1)){
+        alert ("Insira uma quantidade menor ou deixe o intervalo maior")
+        return;}
+
     //para mostrar os números sorteados precisa de uma lista (array)
     let sorteados = [];
     let numero;
